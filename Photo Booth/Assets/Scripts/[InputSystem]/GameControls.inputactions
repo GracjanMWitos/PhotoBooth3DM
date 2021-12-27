@@ -1,0 +1,34 @@
+{
+    "name": "GameControls",
+    "maps": [
+        {
+            "name": "Models",
+            "id": "98255f63-59e6-4fbb-b33e-56320c0472e7",
+            "actions": [
+                {
+                    "name": "MousePosition",
+                    "type": "Value",
+                    "id": "ff7ab56c-7419-4dbc-a5e4-0aca12a016f9",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c68257c0-285a-4e53-993c-c11cc27fbea8",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
