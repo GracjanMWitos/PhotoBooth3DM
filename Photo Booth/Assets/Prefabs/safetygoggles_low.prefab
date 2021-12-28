@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2296658357949251264}
   m_Layer: 0
   m_Name: safetygoggles_low
-  m_TagString: Tagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

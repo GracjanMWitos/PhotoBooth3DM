@@ -1,7 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEditor;
-using UnityEngine.InputSystem;
 
 public class GameHandler : MonoBehaviour
 {
@@ -111,7 +109,7 @@ public class GameHandler : MonoBehaviour
         {
             if (indexChangeBy != 0)
             {
-                Destroy(GameObject.FindGameObjectWithTag("Tagged"));
+                Destroy(GameObject.FindGameObjectWithTag("Respawn"));
                 showUpPoint.rotation = Quaternion.Euler(0f, 0f, 0f);
             }
             currentModelIndex += indexChangeBy;

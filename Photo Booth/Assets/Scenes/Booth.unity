@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 8233602}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: UI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 280944111}
   m_Layer: 5
   m_Name: Panel
-  m_TagString: UI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 342989506}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: UI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -600,7 +600,7 @@ GameObject:
   - component: {fileID: 439563304}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: UI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 511676222}
   m_Layer: 5
   m_Name: NextModelButton
-  m_TagString: UI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1072,6 +1072,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0f93f318cf74447be35192084f4a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 5966535470534800148, guid: b81f809bf147cfa4a95fdc90b6cf818f, type: 3}
+  - {fileID: 6564370757373598665, guid: 6759035c4f153974fac0194352eb9410, type: 3}
+  - {fileID: 3616923044376482309, guid: ba36722b489ef6c418c9db8d75284437, type: 3}
+  - {fileID: 8523291974496792813, guid: 3653532dd1c7355408893102b6eed0f7, type: 3}
+  - {fileID: 391228410369591500, guid: 09e4cab034a33fd4aa80cdbaa9fa5f05, type: 3}
+  - {fileID: 4399714922860730671, guid: 283e6530a665e4513959d1cd4883682f, type: 3}
+  - {fileID: 8239259774729621135, guid: 189cdca4e4870664395f85ddba308e21, type: 3}
+  - {fileID: 7342892120612460635, guid: 9bcbbc7005ebe67498cfa0707633eced, type: 3}
+  - {fileID: 9216322268852620733, guid: ae517553690869a46a82fa6ee604be8d, type: 3}
   currentModelIndex: 0
   rotationSpeed: 20
   zoomSpeed: 2
@@ -1237,7 +1247,7 @@ GameObject:
   - component: {fileID: 1541344068}
   m_Layer: 5
   m_Name: PreviousModelButton
-  m_TagString: UI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1370,7 +1380,7 @@ GameObject:
   - component: {fileID: 1628396694}
   m_Layer: 5
   m_Name: TakePhotoButton
-  m_TagString: UI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1502,7 +1512,7 @@ GameObject:
   - component: {fileID: 1982351030}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: UI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

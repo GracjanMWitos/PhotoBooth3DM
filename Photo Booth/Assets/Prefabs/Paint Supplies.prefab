@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: -2649268403471174961}
   m_Layer: 0
   m_Name: Paint Supplies
-  m_TagString: Tagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
