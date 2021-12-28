@@ -14,24 +14,33 @@ public class RotateObjectController : MonoBehaviour
 
     #endregion Assignment
 
-    public float PCRotationSpeed = 10f;
-    public float MobileRotationSpeed = 0.4f;
+    float PCRotationSpeed = 20f;
+    Vector2 mousePosition;
+    bool mouseIsClicked;
     //Drag the camera object here
 
-    void OnMouseDrag()
+    void MouseDrag()
     {
-        float rotX = gameControls.Models.MousePosition.ReadValue<Vector2>().x * PCRotationSpeed;
-        float rotY = gameControls.Models.MousePosition.ReadValue<Vector2>().y * PCRotationSpeed;
+        if (mouseIsClicked)
+        {
+            float rotX = mousePosition.x * PCRotationSpeed * Time.deltaTime;
+            float rotY = mousePosition.y * PCRotationSpeed * Time.deltaTime;
 
-        Vector3 right = Vector3.Cross(camera.transform.up, transform.position - camera.transform.position);
-        Vector3 up = Vector3.Cross(transform.position - camera.transform.position, right);
-        transform.rotation = Quaternion.AngleAxis(-rotX, up) * transform.rotation;
-        transform.rotation = Quaternion.AngleAxis(rotY, right) * transform.rotation;
+            Vector3 right = Vector3.Cross(camera.transform.up, transform.position - camera.transform.position);
+            Vector3 up = Vector3.Cross(transform.position - camera.transform.position, right);
+            transform.rotation = Quaternion.AngleAxis(-rotX, up) * transform.rotation;
+            transform.rotation = Quaternion.AngleAxis(rotY, right) * transform.rotation;
+        }
     }
 
     void Update ()
     {
-        
+        mousePosition = gameControls.Models.MousePosition.ReadValue<Vector2>();
+
+        gameControls.Models.MouseClick.performed += ctx => mouseIsClicked = true;
+        gameControls.Models.MouseClick.canceled += ctx => mouseIsClicked = false;
+
+        MouseDrag();
     }
 
     #region OnEnable OnDisable

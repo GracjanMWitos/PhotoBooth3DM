@@ -35,6 +35,24 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MouseClick"",
+                    ""type"": ""Button"",
+                    ""id"": ""b3d6b42d-f5c4-4605-bc89-b18f064d72b1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MouseScrollY"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""c60ea2af-99f3-42b6-9f56-78be7a76f2e5"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -48,6 +66,28 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""17eaed85-e3f5-48f9-bf75-fcd3307a3ca8"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""30722300-a672-41bd-ac2c-7467a91d7e6b"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseScrollY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -57,6 +97,8 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         // Models
         m_Models = asset.FindActionMap("Models", throwIfNotFound: true);
         m_Models_MousePosition = m_Models.FindAction("MousePosition", throwIfNotFound: true);
+        m_Models_MouseClick = m_Models.FindAction("MouseClick", throwIfNotFound: true);
+        m_Models_MouseScrollY = m_Models.FindAction("MouseScrollY", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -117,11 +159,15 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Models;
     private IModelsActions m_ModelsActionsCallbackInterface;
     private readonly InputAction m_Models_MousePosition;
+    private readonly InputAction m_Models_MouseClick;
+    private readonly InputAction m_Models_MouseScrollY;
     public struct ModelsActions
     {
         private @GameControls m_Wrapper;
         public ModelsActions(@GameControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @MousePosition => m_Wrapper.m_Models_MousePosition;
+        public InputAction @MouseClick => m_Wrapper.m_Models_MouseClick;
+        public InputAction @MouseScrollY => m_Wrapper.m_Models_MouseScrollY;
         public InputActionMap Get() { return m_Wrapper.m_Models; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -134,6 +180,12 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 @MousePosition.started -= m_Wrapper.m_ModelsActionsCallbackInterface.OnMousePosition;
                 @MousePosition.performed -= m_Wrapper.m_ModelsActionsCallbackInterface.OnMousePosition;
                 @MousePosition.canceled -= m_Wrapper.m_ModelsActionsCallbackInterface.OnMousePosition;
+                @MouseClick.started -= m_Wrapper.m_ModelsActionsCallbackInterface.OnMouseClick;
+                @MouseClick.performed -= m_Wrapper.m_ModelsActionsCallbackInterface.OnMouseClick;
+                @MouseClick.canceled -= m_Wrapper.m_ModelsActionsCallbackInterface.OnMouseClick;
+                @MouseScrollY.started -= m_Wrapper.m_ModelsActionsCallbackInterface.OnMouseScrollY;
+                @MouseScrollY.performed -= m_Wrapper.m_ModelsActionsCallbackInterface.OnMouseScrollY;
+                @MouseScrollY.canceled -= m_Wrapper.m_ModelsActionsCallbackInterface.OnMouseScrollY;
             }
             m_Wrapper.m_ModelsActionsCallbackInterface = instance;
             if (instance != null)
@@ -141,6 +193,12 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 @MousePosition.started += instance.OnMousePosition;
                 @MousePosition.performed += instance.OnMousePosition;
                 @MousePosition.canceled += instance.OnMousePosition;
+                @MouseClick.started += instance.OnMouseClick;
+                @MouseClick.performed += instance.OnMouseClick;
+                @MouseClick.canceled += instance.OnMouseClick;
+                @MouseScrollY.started += instance.OnMouseScrollY;
+                @MouseScrollY.performed += instance.OnMouseScrollY;
+                @MouseScrollY.canceled += instance.OnMouseScrollY;
             }
         }
     }
@@ -148,5 +206,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
     public interface IModelsActions
     {
         void OnMousePosition(InputAction.CallbackContext context);
+        void OnMouseClick(InputAction.CallbackContext context);
+        void OnMouseScrollY(InputAction.CallbackContext context);
     }
 }
