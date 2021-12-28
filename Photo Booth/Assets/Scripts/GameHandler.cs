@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class GameHandler : MonoBehaviour
 {
     #region Assignment
-    private Camera camera;
+    private Camera mainCamera;
     private static GameObject panel;
     private AssetBundle loadedAssetBundle;
     private GameControls gameControls;
@@ -19,7 +19,7 @@ public class GameHandler : MonoBehaviour
 
         panel = GameObject.Find("Panel");
         showUpPoint = GameObject.Find("ShowUpPoint").transform;
-        camera = this.gameObject.GetComponent<Camera>();
+        mainCamera = Camera.main;
 
         loadedAssetBundle = AssetBundle.LoadFromFile(Application.dataPath + @"\[Input]\models");
         prefabs = loadedAssetBundle.LoadAllAssets();
@@ -30,15 +30,14 @@ public class GameHandler : MonoBehaviour
     #endregion Assignment
 
     #region Variables
-    private static float timer;
-
-    private int currentModelIndex;
-
+    [Header("Index")]
+    [SerializeField] private int currentModelIndex;
+    [Space]
     [Header("Speed")]
     [SerializeField] private int rotationSpeed = 20;
-    [Space]
     [SerializeField] private int zoomSpeed = 2;
 
+    private static float timer;
     private Vector2 mouseDelta;
     private float mouseScrollY;
     private bool mouseIsClicked;
@@ -69,8 +68,8 @@ public class GameHandler : MonoBehaviour
             float rotX = mouseDelta.x * rotationSpeed * Time.deltaTime;
             float rotY = mouseDelta.y * rotationSpeed * Time.deltaTime;
 
-            Vector3 right = Vector3.Cross(camera.transform.up, showUpPoint.position - camera.transform.position);
-            Vector3 up = Vector3.Cross(showUpPoint.position - camera.transform.position, right);
+            Vector3 right = Vector3.Cross(mainCamera.transform.up, showUpPoint.position - mainCamera.transform.position);
+            Vector3 up = Vector3.Cross(showUpPoint.position - mainCamera.transform.position, right);
             showUpPoint.rotation = Quaternion.AngleAxis(-rotX, up) * showUpPoint.rotation;
             showUpPoint.rotation = Quaternion.AngleAxis(rotY, right) * showUpPoint.rotation;
         }
@@ -78,11 +77,11 @@ public class GameHandler : MonoBehaviour
         #endregion Rotation
 
         #region Zoom
-        if ( mouseScrollY > 0 && camera.fieldOfView > 20)
-            camera.fieldOfView -= zoomSpeed;
+        if ( mouseScrollY > 0 && mainCamera.fieldOfView > 20)
+            mainCamera.fieldOfView -= zoomSpeed;
 
-        if (mouseScrollY < 0 && camera.fieldOfView < 80)
-            camera.fieldOfView += zoomSpeed;
+        if (mouseScrollY < 0 && mainCamera.fieldOfView < 80)
+            mainCamera.fieldOfView += zoomSpeed;
 
         #endregion Zoom
 
@@ -112,7 +111,7 @@ public class GameHandler : MonoBehaviour
         {
             if (indexChangeBy != 0)
             {
-                Destroy(GameObject.FindGameObjectWithTag("Respawn"));
+                Destroy(GameObject.FindGameObjectWithTag("Tagged"));
                 showUpPoint.rotation = Quaternion.Euler(0f, 0f, 0f);
             }
             currentModelIndex += indexChangeBy;

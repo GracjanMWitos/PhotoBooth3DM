@@ -266,10 +266,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 187606754}
-  - component: {fileID: 187606755}
   m_Layer: 0
   m_Name: ShowUpPoint
-  m_TagString: Tagged
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -288,18 +287,6 @@ Transform:
   m_Father: {fileID: 1513605052}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &187606755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187606753}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5929fa9df3b6c354c9e776994566ecea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &280944109
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +374,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 335126045}
-  - component: {fileID: 335126046}
   - component: {fileID: 335126044}
   - component: {fileID: 335126043}
   - component: {fileID: 335126042}
@@ -496,19 +482,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 5, y: 180, z: 0}
---- !u!114 &335126046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335126041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d0f93f318cf74447be35192084f4a19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseScrollY: 0
 --- !u!1 &342989505
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +804,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 335126046}
+      - m_Target: {fileID: 959642216}
         m_TargetAssemblyTypeName: GameHandler, Assembly-CSharp
         m_MethodName: InstantiateObjectFromBundle
         m_Mode: 3
@@ -894,7 +867,7 @@ GameObject:
   - component: {fileID: 635252091}
   m_Layer: 0
   m_Name: EventSystem
-  m_TagString: Tagged
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1009,7 +982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5568371526223589888, guid: 05ff196d30927374c938221400f2f419, type: 3}
       propertyPath: m_TagString
-      value: Tagged
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: -4889201344145374300, guid: 05ff196d30927374c938221400f2f419, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1049,7 +1022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 05ff196d30927374c938221400f2f419, type: 3}
       propertyPath: m_TagString
-      value: Tagged
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3472778375830378061, guid: 05ff196d30927374c938221400f2f419, type: 3}
       propertyPath: m_IsActive
@@ -1057,7 +1030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3472778375830378061, guid: 05ff196d30927374c938221400f2f419, type: 3}
       propertyPath: m_TagString
-      value: Tagged
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7202271454713460447, guid: 05ff196d30927374c938221400f2f419, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1070,6 +1043,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 05ff196d30927374c938221400f2f419, type: 3}
   m_PrefabInstance: {fileID: 646376336}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &959642215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 959642217}
+  - component: {fileID: 959642216}
+  m_Layer: 0
+  m_Name: GameHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &959642216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959642215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d0f93f318cf74447be35192084f4a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentModelIndex: 0
+  rotationSpeed: 20
+  zoomSpeed: 2
+--- !u!4 &959642217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959642215}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1439644535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1151,7 +1170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7029948723529949830, guid: 8ed890981b095294b858c9160bd85fd2, type: 3}
       propertyPath: m_TagString
-      value: Tagged
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 882129737928793925, guid: 8ed890981b095294b858c9160bd85fd2, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1163,11 +1182,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8ed890981b095294b858c9160bd85fd2, type: 3}
       propertyPath: m_TagString
-      value: Tagged
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5148817236446094103, guid: 8ed890981b095294b858c9160bd85fd2, type: 3}
       propertyPath: m_TagString
-      value: Tagged
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ed890981b095294b858c9160bd85fd2, type: 3}
@@ -1182,7 +1201,7 @@ GameObject:
   - component: {fileID: 1513605052}
   m_Layer: 0
   m_Name: ---Enviorment---
-  m_TagString: Tagged
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1287,7 +1306,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 335126046}
+      - m_Target: {fileID: 959642216}
         m_TargetAssemblyTypeName: GameHandler, Assembly-CSharp
         m_MethodName: InstantiateObjectFromBundle
         m_Mode: 3
@@ -1420,7 +1439,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 335126046}
+      - m_Target: {fileID: 959642216}
         m_TargetAssemblyTypeName: GameHandler, Assembly-CSharp
         m_MethodName: TakePhoto
         m_Mode: 1

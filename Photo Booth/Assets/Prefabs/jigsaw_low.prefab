@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8199653437364118329}
   m_Layer: 0
   m_Name: jigsaw_low
-  m_TagString: Respawn
+  m_TagString: Tagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

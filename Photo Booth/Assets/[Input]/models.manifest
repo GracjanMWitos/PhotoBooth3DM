@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 601396936
+CRC: 2248146422
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 64ae6c4694573856be39e5944d35d8af
+    Hash: d1964bb7e5a85e1bfb7e2d022be76a80
   TypeTreeHash:
     serializedVersion: 2
     Hash: fe3300ad03da4704467714baac3e59be
@@ -30,6 +30,8 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Prefabs/hammer_low.prefab
+- Assets/Prefabs/Stud.prefab
+- Assets/Prefabs/ConstructionLight_Low.prefab
 - Assets/Prefabs/Paint Supplies.prefab
 - Assets/Prefabs/magneticlevel_low.prefab
 - Assets/Prefabs/safetygoggles_low.prefab
